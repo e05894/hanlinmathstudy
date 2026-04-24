@@ -7,19 +7,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            /* 使用可愛的圓體字 */
             font-family: 'Zen Maru Gothic', sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
-            /* 換成粉嫩的淺米色背景，更有可愛感 */
             background-color: #fffaf0; 
             margin: 0;
             padding: 40px 20px;
         }
         
         h1 { 
-            color: #5d4037; /* 深咖啡色文字 */
+            color: #5d4037; 
             font-size: 2.5rem;   
             margin-bottom: 10px;
             text-align: center;
@@ -29,66 +27,65 @@
         .subtitle {
             font-size: 1.3rem;
             color: #8d6e63;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             text-align: center;
         }
 
         .container {
             display: grid;
             grid-template-columns: repeat(2, 1fr); 
-            gap: 30px; /* 增加間距讓畫面不擁擠 */
-            max-width: 800px;
+            gap: 50px 40px; /* 增加上下間距，給放大留空間 */
+            max-width: 700px; /* 縮小容器寬度，讓圖片整體看起來小一點 */
         }
 
         .card {
-            /* 【關鍵修改】移除背景色與陰影，讓白底消失 */
             background: transparent; 
-            padding: 0;
-            border-radius: 0;
-            box-shadow: none; 
-            
             text-align: center;
             text-decoration: none;
             color: #5d4037;
-            transition: transform 0.3s ease;
             display: block;
+            position: relative;
         }
 
-        /* 圖片容器：用來處理圓角與放大 */
+        /* 圖片容器：不再限制邊界 */
         .img-container {
-            width: 100%;
-            height: auto;
-            border-radius: 20px; /* 增加圓角寬度，更有可愛感 */
-            overflow: hidden; 
-            margin-bottom: 15px;
-            /* 如果圖片本身是透明 PNG，這裡可以不加背景 */
+            width: 70%; /* 【關鍵】調整這裡可以讓圖片變小，目前是容器的 70% */
+            margin: 0 auto 15px auto; /* 置中並留下方距離 */
+            /* 移除 overflow: hidden; 讓圖片放大時不會被切掉 */
         }
 
         .card img {
             width: 100%;
             height: auto;
             display: block;
-            transition: transform 0.3s ease;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* 增加一點點彈性的放大感 */
         }
 
-        /* 滑鼠移過去：圖片放大，文字微微跳動 */
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
+        /* 滑鼠移過去：圖片直接向外放大，沒有束縛感 */
         .card:hover img {
-            transform: scale(1.1);
+            transform: scale(1.2); /* 放大倍數，因為沒框了，可以放膽大一點 */
+            z-index: 10; /* 確保放大時圖片在最上層 */
         }
 
         .card p {
             font-size: 1.2rem;
             margin: 0;
             font-weight: 700;
+            transition: color 0.3s;
+        }
+
+        /* 移過去時文字顏色稍微變深 */
+        .card:hover p {
+            color: #2e1f1a;
         }
 
         @media (max-width: 600px) {
             h1 { font-size: 2rem; }
-            .container { grid-template-columns: 1fr; } 
+            .container { 
+                grid-template-columns: 1fr; 
+                gap: 60px; /* 手機版間距加大 */
+            } 
+            .img-container { width: 50%; } /* 手機版圖片比例 */
         }
     </style>
 </head>
@@ -102,24 +99,28 @@
             <div class="img-container">
                 <img src="2.png" alt="連結1">
             </div>
+            <p>乘法觀念引導</p>
         </a>
 
         <a href="https://github.com" target="_blank" class="card">
             <div class="img-container">
                 <img src="3.png" alt="連結2">
             </div>
+            <p>互動練習遊戲</p>
         </a>
 
         <a href="https://www.wikipedia.org" target="_blank" class="card">
             <div class="img-container">
                 <img src="4.png" alt="連結3">
             </div>
-         </a>
+            <p>精選教學影片</p>
+        </a>
 
         <a href="https://www.youtube.com" target="_blank" class="card">
             <div class="img-container">
                 <img src="5.png" alt="連結4">
             </div>
+            <p>課後資源下載</p>
         </a>
     </div>
 
