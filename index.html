@@ -4,31 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>翰林國小數學乘法必備工具</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: "Rounded Mplus 1c", serif;
+            /* 使用可愛的圓體字 */
+            font-family: 'Zen Maru Gothic', sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-color: #eef2f3; 
+            /* 換成粉嫩的淺米色背景，更有可愛感 */
+            background-color: #fffaf0; 
             margin: 0;
             padding: 40px 20px;
         }
         
-        /* 主標題樣式 */
         h1 { 
-            color: #333; 
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            color: #5d4037; /* 深咖啡色文字 */
+            font-size: 2.5rem;   
+            margin-bottom: 10px;
             text-align: center;
-            line-height: 1.5;
+            line-height: 1.3;
         }
 
-        /* 副標題樣式 */
         .subtitle {
-            font-size: 1.4rem;
-            color: #666;
+            font-size: 1.3rem;
+            color: #8d6e63;
             margin-bottom: 40px;
             text-align: center;
         }
@@ -36,61 +36,58 @@
         .container {
             display: grid;
             grid-template-columns: repeat(2, 1fr); 
-            gap: 20px;
+            gap: 30px; /* 增加間距讓畫面不擁擠 */
             max-width: 800px;
         }
 
         .card {
-            background: white;
-            padding: 15px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            /* 【關鍵修改】移除背景色與陰影，讓白底消失 */
+            background: transparent; 
+            padding: 0;
+            border-radius: 0;
+            box-shadow: none; 
+            
             text-align: center;
             text-decoration: none;
-            color: #444;
-            transition: box-shadow 0.3s ease; /* 卡片陰影平滑過渡 */
-            
-            /* 【關鍵】超出卡片範圍的內容要隱藏，這樣圖片放大時才不會爆出來 */
-            overflow: hidden; 
-            display: block; /* 確保 a 標籤完整撐開 */
+            color: #5d4037;
+            transition: transform 0.3s ease;
+            display: block;
         }
 
-        /* 當滑鼠移經卡片時，卡片本身的陰影加深，產生浮起感 */
-        .card:hover { 
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-
-        /* 圖片容器（用來控制圖片放大） */
-        .card .img-container {
+        /* 圖片容器：用來處理圓角與放大 */
+        .img-container {
             width: 100%;
             height: auto;
-            border-radius: 8px; /* 圓角設定在這裡 */
-            overflow: hidden; /* 確保圖片放大時切齊圓角 */
-            margin-bottom: 10px;
+            border-radius: 20px; /* 增加圓角寬度，更有可愛感 */
+            overflow: hidden; 
+            margin-bottom: 15px;
+            /* 如果圖片本身是透明 PNG，這裡可以不加背景 */
         }
 
         .card img {
             width: 100%;
             height: auto;
             display: block;
-            
-            /* 【關鍵】設定圖片的平滑過渡效果 */
-            transition: transform 0.3s ease; 
+            transition: transform 0.3s ease;
         }
 
-        /* 【關鍵】當滑鼠移經卡片(.card)時，內部的圖片(img)進行放大 */
+        /* 滑鼠移過去：圖片放大，文字微微跳動 */
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
         .card:hover img {
-            transform: scale(1.1); /* 放大 1.1 倍，可依喜好調整，例如 1.05 或 1.15 */
+            transform: scale(1.1);
         }
 
         .card p {
-            margin: 10px 0 5px 0;
-            font-weight: bold;
-            position: relative; /* 確保文字在圖片上方（如果需要） */
-            z-index: 2;
+            font-size: 1.2rem;
+            margin: 0;
+            font-weight: 700;
         }
 
         @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
             .container { grid-template-columns: 1fr; } 
         }
     </style>
@@ -98,7 +95,6 @@
 <body>
 
     <h1>翰林國小數學</h1>
-
     <div class="subtitle">乘法必備工具</div>
 
     <div class="container">
@@ -106,25 +102,25 @@
             <div class="img-container">
                 <img src="2.png" alt="連結1">
             </div>
-                    </a>
+        </a>
 
         <a href="https://github.com" target="_blank" class="card">
             <div class="img-container">
                 <img src="3.png" alt="連結2">
             </div>
-                    </a>
+        </a>
 
         <a href="https://www.wikipedia.org" target="_blank" class="card">
             <div class="img-container">
                 <img src="4.png" alt="連結3">
             </div>
-            <        </a>
+         </a>
 
         <a href="https://www.youtube.com" target="_blank" class="card">
             <div class="img-container">
                 <img src="5.png" alt="連結4">
             </div>
-                    </a>
+        </a>
     </div>
 
 </body>
