@@ -113,11 +113,28 @@
             display: block;
         }
 
+/* 手機版適應優化 */
         @media (max-width: 600px) {
             h1 { font-size: 1.8rem; }
-            .container { gap: 30px 10px; }
-            .merged-img-container { flex-direction: column; }
-            .merged-part { max-width: 100%; }
+            .subtitle { font-size: 1.1rem; }
+            
+            /* 讓主頁面卡片維持單欄 */
+            .container { 
+                grid-template-columns: 1fr; 
+                gap: 30px 10px; 
+            }
+
+            /* 【關鍵修改】強制燈箱內的圖片在手機版依然「左右併排」 */
+            .merged-img-container { 
+                flex-direction: row !important; /* 強制不換行 */
+                width: 95%; /* 增加寬度利用率 */
+                align-items: center;
+            }
+
+            .merged-part { 
+                max-width: 50% !important; /* 確保兩張圖各佔一半，不會把對方擠掉 */
+                height: auto; 
+            }
         }
     </style>
 </head>
