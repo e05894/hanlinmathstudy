@@ -18,14 +18,14 @@
         
         h1 { 
             color: #5d4037; 
-            font-size: 2.5rem;   
+            font-size: 3rem;   
             margin-bottom: 10px;
             text-align: center;
             line-height: 1.3;
         }
 
         .subtitle {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             color: #8d6e63;
             margin-bottom: 50px;
             text-align: center;
@@ -49,8 +49,8 @@
 
         /* 圖片容器：不再限制邊界 */
         .img-container {
-            width: 70%; /* 【關鍵】調整這裡可以讓圖片變小，目前是容器的 70% */
-            margin: 0 auto 15px auto; /* 置中並留下方距離 */
+            width: 90%; /* 【關鍵】調整這裡可以讓圖片變小，目前是容器的 70% */
+            margin: 0 auto 10px auto; /* 置中並留下方距離 */
             /* 移除 overflow: hidden; 讓圖片放大時不會被切掉 */
         }
 
@@ -63,7 +63,7 @@
 
         /* 滑鼠移過去：圖片直接向外放大，沒有束縛感 */
         .card:hover img {
-            transform: scale(1.2); /* 放大倍數，因為沒框了，可以放膽大一點 */
+            transform: scale(1.1); /* 放大倍數，因為沒框了，可以放膽大一點 */
             z-index: 10; /* 確保放大時圖片在最上層 */
         }
 
